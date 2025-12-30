@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 .nav2{
     display: flex;
     justify-content: space-between;
@@ -15,4 +18,147 @@ ul{
     cursor: pointer;
     width: 48px;
     height: 48px;
+}
+.nav {
+  position: relative;
+  padding: 40px;
+  height: 900px;
+
+  background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("../UI/img2/icons/c0066f4cb4e3d1753ca503c388370c56c985c7ec.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+.menu{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.menu a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+.karzina{
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+.title{
+  margin-top: 120px;
+  font-size: 80px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif Helvetica, sans-serif;  color: white;
+  font-style: oblique;
+}
+.t2{
+  margin-top: 120px;
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif Helvetica, sans-serif;
+  color: white;
+  font-style: italic;
+  margin-top: -20px;
+}
+.btnShow{
+    width: 170px;
+    height: 52px;
+    border: 2px solid #FFFFFF;
+    color: white;
+      background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("../UI/img2/icons/c0066f4cb4e3d1753ca503c388370c56c985c7ec.jpg");
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+      font-style: italic;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif Helvetica, sans-serif;
+
+}
+.box{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.search{
+    width: 200px;
+    height: 48px;
+    border-radius: 15px;
+    background-color: #F1F5F8;
+    border: none;
+    color: #235275;
+    padding: 10px;
+}
+.ctg{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: -40px;
+    color: gray;
+    cursor: pointer;
+}
+.valueRange{
+    color: gray;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.red{
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.cnt{
+   position: relative;
+   top: -50px;
+   left: 10px;
+   font-size: 20px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-style: initial;
+}
+.karzina{
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.info{
+  display: flex;
+  padding: 40px;
+  gap: 200px;
+}
+.btnAdd{
+  width: 220px;
+  height: 52px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background-color: #BA5D2C;
+  cursor: pointer;
+  margin-top: 30px;
+}
+#clearCart{
+    width: 220px;
+  height: 52px;
+  border-radius: 5px;
+  color: #BA5D2C;
+  border: 1px solid #BA5D2C;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.modal{
+  width: 420px;
+  height: 1027px;
+  border: none !important;
+  background-color: white;
+  margin-left: 1050px;
 }

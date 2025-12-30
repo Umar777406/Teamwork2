@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="..//STYLE/style2.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav class="nav2">
@@ -14,14 +15,61 @@
             <a style="color: black;" href="about.html">About</a>
          </ul>
          <div style="display: flex; justify-content: center;">
-            <img src="img2/comfy.png" alt="">
+            <img style="margin-left: -300px;" src="img2/comfy.png" alt="">
          </div>
-         <img class="karzina" src="img2/map_grocery-or-supermarket.png" alt="">
+         <img class="karzina" src="img2/icons/map_grocery-or-supermarket.png" alt="">
+         <div>
+            <img class="red" src="img2/icons/Ellipse 30.png" alt="">
+            <p class="cnt" style="color: white;">0</p>
+         </div>
+         
     </nav>
     <main style="color: rgb(10, 10, 152); font-size: 20px; font-weight: bold; display: flex; gap: 10px; padding: 100px; background-color: #F1F5F8;">
        <a style="cursor: pointer; font-size: 20px;" href="index.html">Home / </a>
         <a href="products.html" style="cursor: pointer; font-size: 20px;"> Products</a>
     </main>
-    <script type="module" src="..//JS/main.js"></script>
+
+
+
+
+    
+    <div class="box">
+      <div class="sidebar">
+         <div style="display: flex; flex-direction: column;">
+            <input placeholder="Search" class="search" type="search">
+            <p style="font-weight: bold; font-size: 20px;">Company</p>
+            <ul class="ctg">
+                <li>All</li>
+                <li>Ikea</li>
+                <li>Marcos</li>
+                <li>Caressa</li>
+                <li>Liddy</li>
+            </ul>
+          <p style="font-weight: bold; font-size: 20px;">Price</p>
+           <input class="r" type="range">
+           <p class="valueRange">Value :</p>
+         </div>
+      </div>
+      <div class="products">
+      </div>
+    </div>
+    <dialog class="modal">
+               <div style="padding: 20px;">
+                          <img class="closeBtn" style="cursor: pointer;" src="img2/icons/Frame 322.png" alt=""> <br>
+                          <h1 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-style: oblique;">Your Bag</h1>
+                          <div class="box" style="display: flex; gap: 5px; flex-direction: column; justify-content: center; align-items: center;">
+                            <div class="boxI" style="display: flex; gap: 5px; flex-direction: column; justify-content: center; align-items: center;"></div>
+                          </div>
+                          <div>
+                             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 50px;">
+                                <h1>Total</h1>
+                                <h1 style="margin-left: 200px;">50$</h1>
+                            </div>
+                            <img style="cursor: pointer;" src="img2/icons/Frame 281.png" alt="">
+                          </div>
+               </div>
+    </dialog>
+<script type="module" src="../JS/main.js"></script>
+<script src="cart.js"></script>
 </body>
 </html>

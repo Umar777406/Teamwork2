@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..//STYLE/style2.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <nav class="nav2">
+         <ul>
+            <a style="color: black;" href="index.html">Home</a>
+            <a style="color: black;" href="products.html">Products</a>
+            <a style="color: black;" href="about.html">About</a>
+         </ul>
+         <div style="display: flex; justify-content: center;">
+            <img style="margin-left: -300px;" src="img2/comfy.png" alt="">
+         </div>
+         <img class="karzina" src="img2/icons/map_grocery-or-supermarket.png" alt="">
+         <div>
+            <img class="red" src="img2/icons/Ellipse 30.png" alt="">
+            <p class="cnt" style="color: white;">0</p>
+         </div>
+         
+    </nav>
+    <main style="color: rgb(10, 10, 152); font-size: 20px; font-weight: bold; display: flex; gap: 10px; padding: 100px; background-color: #F1F5F8;">
+       <a style="cursor: pointer; font-size: 20px;" href="index.html">Home / </a>
+        <a href="products.html" style="cursor: pointer; font-size: 20px;"> Products</a>
+    </main>
+    <div class="info">
+    </div>
+<script type="module" src="../JS/main.js"></script>
+
+
+
+
+
+<script>
+let url1 = new URLSearchParams(window.location.search)
+let id = url1.get("id") 
+let productUrl = `http://localhost:8000/products/${id}`
+let cnt = document.querySelector(".cnt")
+async function getP(){
+    try {
+       let {data} =  await axios.get(productUrl)
+       show2(data)
+    } catch (error) {
+        console.error(error);
+    }
+}
+function show2(product){
+    let box = document.querySelector(".info")
+    box.innerHTML = `<img width="612" height="433px" src="${product.image}" alt="">
+         <div>
+            <h1>${product.name}</h1>
+            <h3 style="color: gray;">BY MARCOS</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 500px;">
+                <h2>${product.price}</h2>
+                <img style="cursor: pointer;" width="100" height="40" src="img2/icons/Frame 345.png" alt="">
+            </div>
+            <p style="color: gray; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-style: italic;">Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic  chillwave  trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic  chillwave  trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge  </p>
+                <button class="btnAdd">ADD TO CART</button>
+                <button  id="clearCart">Delete Storage</button>
+
+         </div>   `
+         
+         let btnAdd = document.querySelector(".btnAdd")
+         btnAdd.onclick = () =>{
+              let cart = JSON.parse(localStorage.getItem("cart")) || []
+        cart.push({
+            id:product.id,
+            name:product.name,
+            price:product.price,
+            image:product.image
+        })
+        localStorage.setItem("cart", JSON.stringify(cart))
+        let cnt = document.querySelector(".cnt")
+        cnt.textContent = cart.length
+        }
+        document.getElementById("clearCart").onclick = () => {
+        localStorage.removeItem("cart")
+        document.querySelector(".cnt").textContent = 0
+}
+
+       
+         
+}
+getP()
+
+</script>
+</body>
+</html>
